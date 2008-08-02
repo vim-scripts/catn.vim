@@ -1,0 +1,34 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2327
+
+Insert formatted text with number at selected area.
+You can select "text format", "starting number", and "insert area".
+
+Default value of option are
+text format     : "%d "
+starting number : 1
+insert area     : current line only
+
+------------------------------------------------------------------------------
+
+[command format]
+
+:'<,'>Catn {text format} {starting number}
+
+:'<,'>Catn [{starting number}]
+
+({text format} ... see ":help printf()", available format is written there.)
+
+------------------------------------------------------------------------------
+
+[command example]
+
+(Insert number at selected area. 1, 2, 3, ....)
+:'<,'>Catn
+
+(Insert number at selected area. 1000, 1001, 1002, ....)
+:'<,'>Catn 1000
+
+(Insert formatted number text at selected area. 0000500, 0000501, 0000502, ....)
+:'<,'>Catn %08d\  500
+
+
